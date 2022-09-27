@@ -16,7 +16,12 @@ local Scripts = Instance.new("ScrollingFrame")
 local Sit = Instance.new("TextButton")
 local CustomStand = Instance.new("TextButton")
 local InfYield = Instance.new("TextButton")
+local Remington870ModGunPrisonLife = Instance.new("TextButton")
 local Dex = Instance.new("TextButton")
+local M9ModGunPrisonLife = Instance.new("TextButton")
+local LoginSystem = Instance.new("Frame")
+local Enter = Instance.new("TextButton")
+local Key = Instance.new("TextBox")
 
 --Properties:
 
@@ -28,8 +33,9 @@ Main.Name = "Main"
 Main.Parent = Executor
 Main.Active = true
 Main.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
-Main.Position = UDim2.new(0.076010257, 0, 0.0663493946, 0)
-Main.Size = UDim2.new(0, 850, 0, 328)
+Main.Position = UDim2.new(0.0760102645, 0, 0.0663493946, 0)
+Main.Size = UDim2.new(0, 829, 0, 366)
+Main.Visible = false
 
 Ren.Name = "Ren"
 Ren.Parent = Main
@@ -42,8 +48,8 @@ InputFrame.Active = true
 InputFrame.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
 InputFrame.BorderColor3 = Color3.fromRGB(91, 0, 0)
 InputFrame.BorderSizePixel = 2
-InputFrame.Position = UDim2.new(0.0301418435, 0, 0.147169814, 0)
-InputFrame.Size = UDim2.new(0, 501, 0, 187)
+InputFrame.Position = UDim2.new(0.0301418323, 0, 0.147169814, 0)
+InputFrame.Size = UDim2.new(0, 501, 0, 253)
 
 Input.Name = "Input"
 Input.Parent = InputFrame
@@ -77,7 +83,7 @@ Execute.Parent = Main
 Execute.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Execute.BorderSizePixel = 2
-Execute.Position = UDim2.new(0.0177304968, 0, 0.858118594, 0)
+Execute.Position = UDim2.new(0.0297932234, 0, 0.858118594, 0)
 Execute.Size = UDim2.new(0, 118, 0, 30)
 Execute.Font = Enum.Font.Jura
 Execute.Text = "Execute"
@@ -90,7 +96,7 @@ Clear.Parent = Main
 Clear.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Clear.BorderSizePixel = 2
-Clear.Position = UDim2.new(0.274822712, 0, 0.858118594, 0)
+Clear.Position = UDim2.new(0.201240093, 0, 0.858118594, 0)
 Clear.Size = UDim2.new(0, 118, 0, 30)
 Clear.Font = Enum.Font.Jura
 Clear.Text = "Clear"
@@ -153,20 +159,73 @@ InfYield.Text = "Inf Yield"
 InfYield.TextColor3 = Color3.fromRGB(255, 0, 0)
 InfYield.TextSize = 20.000
 
+Remington870ModGunPrisonLife.Name = "Remington 870 Mod Gun Prison Life"
+Remington870ModGunPrisonLife.Parent = Scripts
+Remington870ModGunPrisonLife.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Remington870ModGunPrisonLife.BackgroundTransparency = 1.000
+Remington870ModGunPrisonLife.Position = UDim2.new(0.00400000066, 0, 0.224973589, 0)
+Remington870ModGunPrisonLife.Size = UDim2.new(0, 237, 0, 46)
+Remington870ModGunPrisonLife.Font = Enum.Font.Bodoni
+Remington870ModGunPrisonLife.Text = "Remington 870 Mod Gun Prison Life"
+Remington870ModGunPrisonLife.TextColor3 = Color3.fromRGB(255, 128, 128)
+Remington870ModGunPrisonLife.TextSize = 15.000
+
 Dex.Name = "Dex"
 Dex.Parent = Scripts
 Dex.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Dex.BackgroundTransparency = 1.000
-Dex.Position = UDim2.new(0.00400000066, 0, 0.224973589, 0)
+Dex.Position = UDim2.new(0.00400000066, 0, 0.295095533, 0)
 Dex.Size = UDim2.new(0, 237, 0, 46)
 Dex.Font = Enum.Font.Bodoni
 Dex.Text = "Dex"
 Dex.TextColor3 = Color3.fromRGB(10, 96, 255)
 Dex.TextSize = 20.000
 
+M9ModGunPrisonLife.Name = "M9 Mod Gun Prison Life"
+M9ModGunPrisonLife.Parent = Scripts
+M9ModGunPrisonLife.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+M9ModGunPrisonLife.BackgroundTransparency = 1.000
+M9ModGunPrisonLife.Position = UDim2.new(0.00400000066, 0, 0.3484492, 0)
+M9ModGunPrisonLife.Size = UDim2.new(0, 237, 0, 46)
+M9ModGunPrisonLife.Font = Enum.Font.Bodoni
+M9ModGunPrisonLife.Text = "M9 Mod Gun Prison Life"
+M9ModGunPrisonLife.TextColor3 = Color3.fromRGB(201, 107, 255)
+M9ModGunPrisonLife.TextSize = 15.000
+
+LoginSystem.Name = "LoginSystem"
+LoginSystem.Parent = Executor
+LoginSystem.Active = true
+LoginSystem.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+LoginSystem.Position = UDim2.new(0.226396918, 0, 0.25, 0)
+LoginSystem.Size = UDim2.new(0, 557, 0, 277)
+
+Enter.Name = "Enter"
+Enter.Parent = LoginSystem
+Enter.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Enter.Position = UDim2.new(0.303473502, 0, 0.695852518, 0)
+Enter.Size = UDim2.new(0, 200, 0, 50)
+Enter.Font = Enum.Font.Unknown
+Enter.Text = "Login"
+Enter.TextColor3 = Color3.fromRGB(7, 7, 255)
+Enter.TextSize = 14.000
+
+Key.Name = "Key"
+Key.Parent = LoginSystem
+Key.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+Key.BorderColor3 = Color3.fromRGB(8, 12, 15)
+Key.Position = UDim2.new(0.135283366, 0, 0.271889389, 0)
+Key.Size = UDim2.new(0, 391, 0, 50)
+Key.Font = Enum.Font.Unknown
+Key.Text = ""
+Key.TextColor3 = Color3.fromRGB(156, 0, 0)
+Key.TextScaled = true
+Key.TextSize = 14.000
+Key.TextStrokeTransparency = 0.500
+Key.TextWrapped = true
+
 -- Scripts:
 
-local function XJOORKD_fake_script() -- Sit.LocalScript 
+local function WXNAG_fake_script() -- Sit.LocalScript 
 	local script = Instance.new('LocalScript', Sit)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -174,8 +233,8 @@ local function XJOORKD_fake_script() -- Sit.LocalScript
 	end)
 	
 end
-coroutine.wrap(XJOORKD_fake_script)()
-local function DFXQJJ_fake_script() -- CustomStand.LocalScript 
+coroutine.wrap(WXNAG_fake_script)()
+local function DZIEE_fake_script() -- CustomStand.LocalScript 
 	local script = Instance.new('LocalScript', CustomStand)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -183,8 +242,8 @@ local function DFXQJJ_fake_script() -- CustomStand.LocalScript
 		game.Players.LocalPlayer.Character.StandMorph.LowerTorso:Destroy()
 	end)
 end
-coroutine.wrap(DFXQJJ_fake_script)()
-local function UNTHSX_fake_script() -- InfYield.LocalScript 
+coroutine.wrap(DZIEE_fake_script)()
+local function MEHXBI_fake_script() -- InfYield.LocalScript 
 	local script = Instance.new('LocalScript', InfYield)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -192,8 +251,22 @@ local function UNTHSX_fake_script() -- InfYield.LocalScript
 	end)
 	
 end
-coroutine.wrap(UNTHSX_fake_script)()
-local function PHJRX_fake_script() -- Dex.LocalScript 
+coroutine.wrap(MEHXBI_fake_script)()
+local function SDLIE_fake_script() -- Remington870ModGunPrisonLife.LocalScript 
+	local script = Instance.new('LocalScript', Remington870ModGunPrisonLife)
+
+	local player = game:GetService"Players".LocalPlayer
+	local char = player.Character
+	local gun = char["Remington 870"]
+	local module = require(gun.GunStates)
+	
+	module.FireRate = 0.000000000000000001
+	module.Ammo = 15
+	module.ReloadTime = 0.8
+	module.Bullet = 100
+end
+coroutine.wrap(SDLIE_fake_script)()
+local function TABJ_fake_script() -- Dex.LocalScript 
 	local script = Instance.new('LocalScript', Dex)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -257,8 +330,22 @@ local function PHJRX_fake_script() -- Dex.LocalScript
 	end)
 	
 end
-coroutine.wrap(PHJRX_fake_script)()
-local function FRKUOHL_fake_script() -- Executor.Executor Operator 
+coroutine.wrap(TABJ_fake_script)()
+local function DMLTHM_fake_script() -- M9ModGunPrisonLife.LocalScript 
+	local script = Instance.new('LocalScript', M9ModGunPrisonLife)
+
+	local player = game:GetService"Players".LocalPlayer
+	local char = player.Character
+	local gun = char["M9"]
+	local module = require(gun.GunStates)
+	
+	module.FireRate = 0.000000000000000001
+	module.Ammo = 15
+	module.ReloadTime = 0.8
+	module.Bullet = 100
+end
+coroutine.wrap(DMLTHM_fake_script)()
+local function CSYC_fake_script() -- Executor.Executor Operator 
 	local script = Instance.new('LocalScript', Executor)
 
 	local Main = script.Parent.Main
@@ -267,6 +354,8 @@ local function FRKUOHL_fake_script() -- Executor.Executor Operator
 	local Execute = Main.Execute
 	local Clear = Main.Clear
 	local Exit = Main.Exit
+	
+	game.StarterGui:SetCore("SendNotification",{Title = "Update",Text = "-Added Scripts Side",Duration = 5})
 	
 	Input.MouseEnter:Connect(function()
 		if Input.Text ~= "" then return end
@@ -297,7 +386,7 @@ local function FRKUOHL_fake_script() -- Executor.Executor Operator
 	player.Chatted:Connect(function(msg)
 		if msg == "/e Enable Executor" then
 			Main.Visible = true
-			Main:TweenSize(UDim2.new(0, 564,0, 279),Enum.EasingDirection.InOut,Enum.EasingStyle.Quint,5,true)
+			Main:TweenSize(UDim2.new(0, 829,0, 366),Enum.EasingDirection.InOut,Enum.EasingStyle.Quint,5,true)
 		elseif msg == "/e Disable Executor" then
 			Main:TweenSize(UDim2.new(0, 0,0, 0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quint,5,true)
 			wait(5)
@@ -305,4 +394,19 @@ local function FRKUOHL_fake_script() -- Executor.Executor Operator
 		end
 	end)
 end
-coroutine.wrap(FRKUOHL_fake_script)()
+coroutine.wrap(CSYC_fake_script)()
+local function LTMTA_fake_script() -- Key.Enter 
+	local script = Instance.new('LocalScript', Key)
+
+	local Enter = script.Parent.Parent.Enter
+	
+	Enter.MouseButton1Down:Connect(function()
+		if script.Parent.Text == "Zeku" or script.Parent.Text == "Ren" then
+			game.StarterGui:SetCore("SendNotification",{Title = "Welcome!",Text = "Have a good day!",Duration = 5})
+			script.Parent.Parent.Parent.Main.Visible = true
+			script.Parent.Parent.Parent.Main:TweenSize(UDim2.new(0, 829,0, 366),Enum.EasingDirection.InOut,Enum.EasingStyle.Quint,5,true)
+			script.Parent.Parent.Parent.LoginSystem.Visible = false
+		end
+	end)
+end
+coroutine.wrap(LTMTA_fake_script)()
