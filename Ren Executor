@@ -15,6 +15,8 @@ local Exit = Instance.new("TextButton")
 local Scripts = Instance.new("ScrollingFrame")
 local Sit = Instance.new("TextButton")
 local CustomStand = Instance.new("TextButton")
+local InfYield = Instance.new("TextButton")
+local Dex = Instance.new("TextButton")
 
 --Properties:
 
@@ -51,7 +53,7 @@ Input.Size = UDim2.new(0, 488, 0, 187)
 Input.ClearTextOnFocus = false
 Input.Font = Enum.Font.Jura
 Input.MultiLine = true
-Input.Text = "local plr"
+Input.Text = ""
 Input.TextColor3 = Color3.fromRGB(6, 255, 81)
 Input.TextSize = 15.000
 Input.TextXAlignment = Enum.TextXAlignment.Left
@@ -126,7 +128,7 @@ Sit.Position = UDim2.new(0.00400000019, 0, 0.00393700786, 0)
 Sit.Size = UDim2.new(0, 237, 0, 46)
 Sit.Font = Enum.Font.Bodoni
 Sit.Text = "Sit"
-Sit.TextColor3 = Color3.fromRGB(131, 0, 0)
+Sit.TextColor3 = Color3.fromRGB(255, 172, 151)
 Sit.TextSize = 20.000
 
 CustomStand.Name = "Custom Stand"
@@ -137,12 +139,34 @@ CustomStand.Position = UDim2.new(0.00400000019, 0, 0.0862540826, 0)
 CustomStand.Size = UDim2.new(0, 237, 0, 46)
 CustomStand.Font = Enum.Font.Bodoni
 CustomStand.Text = "YBA Custom Stand"
-CustomStand.TextColor3 = Color3.fromRGB(131, 0, 0)
+CustomStand.TextColor3 = Color3.fromRGB(255, 161, 47)
 CustomStand.TextSize = 20.000
+
+InfYield.Name = "Inf Yield"
+InfYield.Parent = Scripts
+InfYield.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InfYield.BackgroundTransparency = 1.000
+InfYield.Position = UDim2.new(0.0200000014, 0, 0.154851645, 0)
+InfYield.Size = UDim2.new(0, 237, 0, 46)
+InfYield.Font = Enum.Font.Bodoni
+InfYield.Text = "Inf Yield"
+InfYield.TextColor3 = Color3.fromRGB(255, 0, 0)
+InfYield.TextSize = 20.000
+
+Dex.Name = "Dex"
+Dex.Parent = Scripts
+Dex.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Dex.BackgroundTransparency = 1.000
+Dex.Position = UDim2.new(0.00400000066, 0, 0.224973589, 0)
+Dex.Size = UDim2.new(0, 237, 0, 46)
+Dex.Font = Enum.Font.Bodoni
+Dex.Text = "Dex"
+Dex.TextColor3 = Color3.fromRGB(10, 96, 255)
+Dex.TextSize = 20.000
 
 -- Scripts:
 
-local function AFRR_fake_script() -- Sit.LocalScript 
+local function XJOORKD_fake_script() -- Sit.LocalScript 
 	local script = Instance.new('LocalScript', Sit)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -150,8 +174,8 @@ local function AFRR_fake_script() -- Sit.LocalScript
 	end)
 	
 end
-coroutine.wrap(AFRR_fake_script)()
-local function XSIVG_fake_script() -- CustomStand.LocalScript 
+coroutine.wrap(XJOORKD_fake_script)()
+local function DFXQJJ_fake_script() -- CustomStand.LocalScript 
 	local script = Instance.new('LocalScript', CustomStand)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -159,8 +183,82 @@ local function XSIVG_fake_script() -- CustomStand.LocalScript
 		game.Players.LocalPlayer.Character.StandMorph.LowerTorso:Destroy()
 	end)
 end
-coroutine.wrap(XSIVG_fake_script)()
-local function LRII_fake_script() -- Executor.Executor Operator 
+coroutine.wrap(DFXQJJ_fake_script)()
+local function UNTHSX_fake_script() -- InfYield.LocalScript 
+	local script = Instance.new('LocalScript', InfYield)
+
+	script.Parent.MouseButton1Up:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+	end)
+	
+end
+coroutine.wrap(UNTHSX_fake_script)()
+local function PHJRX_fake_script() -- Dex.LocalScript 
+	local script = Instance.new('LocalScript', Dex)
+
+	script.Parent.MouseButton1Up:Connect(function()
+		local rng = Random.new()
+	
+		local charset = {}
+		for i = 48,  57 do table.insert(charset, string.char(i)) end
+		for i = 65,  90 do table.insert(charset, string.char(i)) end
+		for i = 97, 122 do table.insert(charset, string.char(i)) end
+		local function RandomCharacters(length)
+			if length > 0 then
+				return RandomCharacters(length - 1) .. charset[rng:NextInteger(1, #charset)]
+			else
+				return ""
+			end
+		end
+	
+		local Dex = game:GetObjects("rbxassetid://9553291002")[1]
+		Dex.Name = RandomCharacters(rng:NextInteger(5, 20))
+		Dex.Parent = game:GetService("CoreGui")
+	
+		local function Load(Obj, Url)
+			local function GiveOwnGlobals(Func, Script)
+				local Fenv = {}
+				local RealFenv = {script = Script}
+				local FenvMt = {}
+				FenvMt.__index = function(a,b)
+					if RealFenv[b] == nil then
+						return getfenv()[b]
+					else
+						return RealFenv[b]
+					end
+				end
+				FenvMt.__newindex = function(a, b, c)
+					if RealFenv[b] == nil then
+						getfenv()[b] = c
+					else
+						RealFenv[b] = c
+					end
+				end
+				setmetatable(Fenv, FenvMt)
+				setfenv(Func, Fenv)
+				return Func
+			end
+	
+			local function LoadScripts(Script)
+				if Script.ClassName == "Script" or Script.ClassName == "LocalScript" then
+					spawn(function()
+						GiveOwnGlobals(loadstring(Script.Source, "=" .. Script:GetFullName()), Script)()
+					end)
+				end
+				for i,v in pairs(Script:GetChildren()) do
+					LoadScripts(v)
+				end
+			end
+	
+			LoadScripts(Obj)
+		end
+	
+		Load(Dex)
+	end)
+	
+end
+coroutine.wrap(PHJRX_fake_script)()
+local function FRKUOHL_fake_script() -- Executor.Executor Operator 
 	local script = Instance.new('LocalScript', Executor)
 
 	local Main = script.Parent.Main
@@ -207,4 +305,4 @@ local function LRII_fake_script() -- Executor.Executor Operator
 		end
 	end)
 end
-coroutine.wrap(LRII_fake_script)()
+coroutine.wrap(FRKUOHL_fake_script)()
