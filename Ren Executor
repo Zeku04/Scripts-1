@@ -19,9 +19,6 @@ local InfYield = Instance.new("TextButton")
 local Remington870ModGunPrisonLife = Instance.new("TextButton")
 local Dex = Instance.new("TextButton")
 local M9ModGunPrisonLife = Instance.new("TextButton")
-local LoginSystem = Instance.new("Frame")
-local Enter = Instance.new("TextButton")
-local Key = Instance.new("TextBox")
 
 --Properties:
 
@@ -191,41 +188,9 @@ M9ModGunPrisonLife.Text = "M9 Mod Gun Prison Life"
 M9ModGunPrisonLife.TextColor3 = Color3.fromRGB(201, 107, 255)
 M9ModGunPrisonLife.TextSize = 15.000
 
-LoginSystem.Name = "LoginSystem"
-LoginSystem.Parent = Executor
-LoginSystem.Active = true
-LoginSystem.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-LoginSystem.Position = UDim2.new(0.226396918, 0, 0.25, 0)
-LoginSystem.Size = UDim2.new(0, 557, 0, 277)
-LoginSystem.Visible = false
-
-Enter.Name = "Enter"
-Enter.Parent = LoginSystem
-Enter.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
-Enter.Position = UDim2.new(0.303473502, 0, 0.695852518, 0)
-Enter.Size = UDim2.new(0, 200, 0, 50)
-Enter.Font = Enum.Font.Unknown
-Enter.Text = "Login"
-Enter.TextColor3 = Color3.fromRGB(7, 7, 255)
-Enter.TextSize = 14.000
-
-Key.Name = "Key"
-Key.Parent = LoginSystem
-Key.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
-Key.BorderColor3 = Color3.fromRGB(8, 12, 15)
-Key.Position = UDim2.new(0.135283366, 0, 0.271889389, 0)
-Key.Size = UDim2.new(0, 391, 0, 50)
-Key.Font = Enum.Font.Unknown
-Key.Text = ""
-Key.TextColor3 = Color3.fromRGB(156, 0, 0)
-Key.TextScaled = true
-Key.TextSize = 14.000
-Key.TextStrokeTransparency = 0.500
-Key.TextWrapped = true
-
 -- Scripts:
 
-local function WKUJW_fake_script() -- Sit.LocalScript 
+local function KPWDG_fake_script() -- Sit.LocalScript 
 	local script = Instance.new('LocalScript', Sit)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -233,8 +198,8 @@ local function WKUJW_fake_script() -- Sit.LocalScript
 	end)
 	
 end
-coroutine.wrap(WKUJW_fake_script)()
-local function PDEKXF_fake_script() -- CustomStand.LocalScript 
+coroutine.wrap(KPWDG_fake_script)()
+local function RXXB_fake_script() -- CustomStand.LocalScript 
 	local script = Instance.new('LocalScript', CustomStand)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -242,8 +207,8 @@ local function PDEKXF_fake_script() -- CustomStand.LocalScript
 		game.Players.LocalPlayer.Character.StandMorph.LowerTorso:Destroy()
 	end)
 end
-coroutine.wrap(PDEKXF_fake_script)()
-local function SZUCF_fake_script() -- InfYield.LocalScript 
+coroutine.wrap(RXXB_fake_script)()
+local function IEBGSE_fake_script() -- InfYield.LocalScript 
 	local script = Instance.new('LocalScript', InfYield)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -251,8 +216,8 @@ local function SZUCF_fake_script() -- InfYield.LocalScript
 	end)
 	
 end
-coroutine.wrap(SZUCF_fake_script)()
-local function OALVQ_fake_script() -- Remington870ModGunPrisonLife.LocalScript 
+coroutine.wrap(IEBGSE_fake_script)()
+local function HCMZV_fake_script() -- Remington870ModGunPrisonLife.LocalScript 
 	local script = Instance.new('LocalScript', Remington870ModGunPrisonLife)
 
 	local player = game:GetService"Players".LocalPlayer
@@ -265,8 +230,8 @@ local function OALVQ_fake_script() -- Remington870ModGunPrisonLife.LocalScript
 	module.ReloadTime = 0.8
 	module.Bullet = 100
 end
-coroutine.wrap(OALVQ_fake_script)()
-local function WBYJRN_fake_script() -- Dex.LocalScript 
+coroutine.wrap(HCMZV_fake_script)()
+local function AEECWWT_fake_script() -- Dex.LocalScript 
 	local script = Instance.new('LocalScript', Dex)
 
 	script.Parent.MouseButton1Up:Connect(function()
@@ -330,8 +295,8 @@ local function WBYJRN_fake_script() -- Dex.LocalScript
 	end)
 	
 end
-coroutine.wrap(WBYJRN_fake_script)()
-local function NTMW_fake_script() -- M9ModGunPrisonLife.LocalScript 
+coroutine.wrap(AEECWWT_fake_script)()
+local function XBOCLL_fake_script() -- M9ModGunPrisonLife.LocalScript 
 	local script = Instance.new('LocalScript', M9ModGunPrisonLife)
 
 	local player = game:GetService"Players".LocalPlayer
@@ -344,8 +309,8 @@ local function NTMW_fake_script() -- M9ModGunPrisonLife.LocalScript
 	module.ReloadTime = 0.8
 	module.Bullet = 100
 end
-coroutine.wrap(NTMW_fake_script)()
-local function LRSJTOZ_fake_script() -- Executor.Executor Operator 
+coroutine.wrap(XBOCLL_fake_script)()
+local function XHMZ_fake_script() -- Executor.Executor Operator 
 	local script = Instance.new('LocalScript', Executor)
 
 	local Main = script.Parent.Main
@@ -394,19 +359,4 @@ local function LRSJTOZ_fake_script() -- Executor.Executor Operator
 		end
 	end)
 end
-coroutine.wrap(LRSJTOZ_fake_script)()
-local function FVEQTHA_fake_script() -- Key.Enter 
-	local script = Instance.new('LocalScript', Key)
-
-	local Enter = script.Parent.Parent.Enter
-	
-	Enter.MouseButton1Down:Connect(function()
-		if script.Parent.Text == "Zeku" or script.Parent.Text == "Ren" then
-			game.StarterGui:SetCore("SendNotification",{Title = "Welcome!",Text = "Have a good day!",Duration = 5})
-			script.Parent.Parent.Parent.Main.Visible = true
-			script.Parent.Parent.Parent.Main:TweenSize(UDim2.new(0, 829,0, 366),Enum.EasingDirection.InOut,Enum.EasingStyle.Quint,5,true)
-			script.Parent.Parent.Parent.LoginSystem.Visible = false
-		end
-	end)
-end
-coroutine.wrap(FVEQTHA_fake_script)()
+coroutine.wrap(XHMZ_fake_script)()
