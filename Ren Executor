@@ -1,0 +1,158 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Executor = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Ren = Instance.new("Frame")
+local InputFrame = Instance.new("ScrollingFrame")
+local Input = Instance.new("TextBox")
+local RenText = Instance.new("TextLabel")
+local Execute = Instance.new("TextButton")
+local Clear = Instance.new("TextButton")
+local Exit = Instance.new("TextButton")
+
+--Properties:
+
+Executor.Name = "Executor"
+Executor.Parent = game.CoreGui
+Executor.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = Executor
+Main.Active = true
+Main.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+Main.Position = UDim2.new(0.275176376, 0, 0.227218956, 0)
+Main.Size = UDim2.new(0, 564, 0, 279)
+
+Ren.Name = "Ren"
+Ren.Parent = Main
+Ren.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Ren.Size = UDim2.new(0, 564, 0, 30)
+
+InputFrame.Name = "InputFrame"
+InputFrame.Parent = Main
+InputFrame.Active = true
+InputFrame.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+InputFrame.BorderColor3 = Color3.fromRGB(91, 0, 0)
+InputFrame.BorderSizePixel = 2
+InputFrame.Position = UDim2.new(0.0301418435, 0, 0.147169814, 0)
+InputFrame.Size = UDim2.new(0, 501, 0, 187)
+
+Input.Name = "Input"
+Input.Parent = InputFrame
+Input.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Input.BackgroundTransparency = 1.000
+Input.Size = UDim2.new(0, 488, 0, 187)
+Input.ClearTextOnFocus = false
+Input.Font = Enum.Font.Jura
+Input.MultiLine = true
+Input.Text = "local plr"
+Input.TextColor3 = Color3.fromRGB(6, 255, 81)
+Input.TextSize = 15.000
+Input.TextXAlignment = Enum.TextXAlignment.Left
+Input.TextYAlignment = Enum.TextYAlignment.Top
+
+RenText.Name = "RenText"
+RenText.Parent = Main
+RenText.BackgroundColor3 = Color3.fromRGB(66, 66, 66)
+RenText.BackgroundTransparency = 0.700
+RenText.BorderColor3 = Color3.fromRGB(53, 5, 5)
+RenText.Size = UDim2.new(0, 167, 0, 24)
+RenText.Font = Enum.Font.Unknown
+RenText.Text = "    Ren"
+RenText.TextColor3 = Color3.fromRGB(125, 0, 0)
+RenText.TextSize = 20.000
+RenText.TextStrokeTransparency = 0.790
+RenText.TextXAlignment = Enum.TextXAlignment.Left
+
+Execute.Name = "Execute"
+Execute.Parent = Main
+Execute.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Execute.BorderSizePixel = 2
+Execute.Position = UDim2.new(0.0177304968, 0, 0.858118594, 0)
+Execute.Size = UDim2.new(0, 118, 0, 30)
+Execute.Font = Enum.Font.Jura
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 55, 55)
+Execute.TextSize = 14.000
+Execute.TextStrokeColor3 = Color3.fromRGB(135, 255, 60)
+
+Clear.Name = "Clear"
+Clear.Parent = Main
+Clear.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Clear.BorderSizePixel = 2
+Clear.Position = UDim2.new(0.274822712, 0, 0.858118594, 0)
+Clear.Size = UDim2.new(0, 118, 0, 30)
+Clear.Font = Enum.Font.Jura
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(255, 55, 55)
+Clear.TextSize = 14.000
+Clear.TextStrokeColor3 = Color3.fromRGB(135, 255, 60)
+
+Exit.Name = "Exit"
+Exit.Parent = Main
+Exit.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Exit.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Exit.BorderSizePixel = 2
+Exit.Position = UDim2.new(0.790780127, 0, 0.0215053763, 0)
+Exit.Size = UDim2.new(0, 112, 0, 18)
+Exit.Font = Enum.Font.Jura
+Exit.Text = "Exit"
+Exit.TextColor3 = Color3.fromRGB(255, 55, 55)
+Exit.TextSize = 14.000
+Exit.TextStrokeColor3 = Color3.fromRGB(135, 255, 60)
+
+-- Scripts:
+
+local function ZJBYST_fake_script() -- Executor.Executor Operator 
+	local script = Instance.new('LocalScript', Executor)
+
+	local Main = script.Parent.Main
+	Main.Draggable = true
+	local Input = Main.InputFrame.Input
+	local Execute = Main.Execute
+	local Clear = Main.Clear
+	local Exit = Main.Exit
+	
+	Input.MouseEnter:Connect(function()
+		if Input.Text ~= "" then return end
+	Input.Text = "Type Your Code Here!"	
+	end)
+	
+	Input.MouseLeave:Connect(function()
+		if Input.Text ~= "Type Your Here!" then return end
+		Input.Text = ""
+	end)
+	
+	Execute.MouseButton1Up:Connect(function()
+		loadstring(Input.Text)()
+	end)
+	
+	Clear.MouseButton1Up:Connect(function()
+		Input.Text = ""
+	end)
+	
+	Exit.MouseButton1Up:Connect(function()
+		Main:TweenSize(UDim2.new(0, 0,0, 0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quint,5,true)
+		wait(5)
+		Main.Visible = false
+	end)
+	
+	local player = game:GetService"Players".LocalPlayer
+	
+	player.Chatted:Connect(function(msg)
+		if msg == "/e Enable Executor" then
+			Main.Visible = true
+			Main:TweenSize(UDim2.new(0, 564,0, 279),Enum.EasingDirection.InOut,Enum.EasingStyle.Quint,5,true)
+		elseif msg == "/e Disable Executor" then
+			Main:TweenSize(UDim2.new(0, 0,0, 0),Enum.EasingDirection.InOut,Enum.EasingStyle.Quint,5,true)
+			wait(5)
+			Main.Visible = false
+		end
+	end)
+end
+coroutine.wrap(ZJBYST_fake_script)()
