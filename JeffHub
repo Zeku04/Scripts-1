@@ -1,0 +1,257 @@
+local JeffHub = Instance.new("ScreenGui")
+local Login = Instance.new("Frame")
+local Bar = Instance.new("Frame")
+local Exit = Instance.new("TextButton")
+local User = Instance.new("TextBox")
+local Password = Instance.new("TextBox")
+local Login_2 = Instance.new("TextButton")
+local Menu = Instance.new("Frame")
+local Main = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local MainButton = Instance.new("TextButton")
+local ExecutorButton = Instance.new("TextButton")
+local Executor = Instance.new("Frame")
+local Input = Instance.new("TextBox")
+local Execute = Instance.new("TextButton")
+
+--Properties:
+
+JeffHub.Name = "JeffHub"
+JeffHub.Parent = game.CoreGui
+JeffHub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Login.Name = "Login"
+Login.Parent = JeffHub
+Login.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Login.Position = UDim2.new(0.43459779, 0, 0.239644974, 0)
+Login.Size = UDim2.new(0, 175, 0, 292)
+Login.Visible = true
+Login.Draggable = true
+Login.Active = true
+
+Bar.Name = "Bar"
+Bar.Parent = Login
+Bar.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+Bar.Size = UDim2.new(0, 175, 0, 24)
+
+Exit.Name = "Exit"
+Exit.Parent = Login
+Exit.BackgroundColor3 = Color3.fromRGB(255, 159, 41)
+Exit.Position = UDim2.new(0.89142859, 0, 0.0239726026, 0)
+Exit.Size = UDim2.new(0, 13, 0, 13)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = ""
+Exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Exit.TextSize = 14.000
+Exit.MouseButton1Down:Connect(function()
+	JeffHub:Destroy()
+end)
+
+User.Name = "User"
+User.Parent = Login
+User.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+User.BackgroundTransparency = 0.500
+User.BorderColor3 = Color3.fromRGB(86, 86, 86)
+User.BorderSizePixel = 2
+User.Position = UDim2.new(0.0457142852, 0, 0.212328762, 0)
+User.Size = UDim2.new(0, 161, 0, 25)
+User.Font = Enum.Font.Bodoni
+User.PlaceholderText = "User"
+User.Text = ""
+User.TextColor3 = Color3.fromRGB(0, 186, 155)
+User.TextSize = 14.000
+
+Password.Name = "Password"
+Password.Parent = Login
+Password.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Password.BackgroundTransparency = 0.500
+Password.BorderColor3 = Color3.fromRGB(86, 86, 86)
+Password.BorderSizePixel = 2
+Password.Position = UDim2.new(0.0399999991, 0, 0.339041084, 0)
+Password.Size = UDim2.new(0, 161, 0, 25)
+Password.Font = Enum.Font.Fantasy
+Password.PlaceholderText = "Password"
+Password.Text = ""
+Password.TextColor3 = Color3.fromRGB(80, 0, 0)
+Password.TextSize = 14.000
+
+Login_2.Name = "Login"
+Login_2.Parent = Login
+Login_2.BackgroundColor3 = Color3.fromRGB(70, 69, 69)
+Login_2.BorderColor3 = Color3.fromRGB(53, 53, 53)
+Login_2.BorderSizePixel = 2
+Login_2.Position = UDim2.new(0.194285721, 0, 0.602739751, 0)
+Login_2.Size = UDim2.new(0, 107, 0, 23)
+Login_2.Font = Enum.Font.Fantasy
+Login_2.Text = "Login"
+Login_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Login_2.TextSize = 14.000
+Login_2.TextStrokeColor3 = Color3.fromRGB(50, 50, 50)
+Login_2.TextStrokeTransparency = 0.500
+
+Menu.Name = "Menu"
+Menu.Parent = JeffHub
+Menu.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+Menu.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Menu.BorderSizePixel = 2
+Menu.Position = UDim2.new(0.244277313, 0, 0.248520717, 0)
+Menu.Size = UDim2.new(0, 536, 0, 230)
+Menu.Visible = false
+Menu.Draggable = true
+Menu.Active = true
+
+Main.Name = "Main"
+Main.Parent = Menu
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BackgroundTransparency = 1.000
+Main.Position = UDim2.new(0.272388071, 0, 0.0608695634, 0)
+Main.Size = UDim2.new(0, 367, 0, 202)
+Main.Visible = false
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+TextLabel.Position = UDim2.new(-0.00158608251, 0, -0.00103314093, 0)
+TextLabel.Size = UDim2.new(0, 367, 0, 202)
+TextLabel.Font = Enum.Font.Code
+TextLabel.Text = "--------------------[Updates]---------------------"
+TextLabel.TextColor3 = Color3.fromRGB(255, 2, 2)
+TextLabel.TextSize = 14.000
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+MainButton.Name = "MainButton"
+MainButton.Parent = Menu
+MainButton.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+MainButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainButton.BorderSizePixel = 2
+MainButton.Position = UDim2.new(0.0149253728, 0, 0.0565217398, 0)
+MainButton.Size = UDim2.new(0, 129, 0, 28)
+MainButton.Font = Enum.Font.Michroma
+MainButton.Text = "Main"
+MainButton.TextColor3 = Color3.fromRGB(158, 50, 50)
+MainButton.TextSize = 14.000
+MainButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+MainButton.TextStrokeTransparency = 0.900
+
+ExecutorButton.Name = "ExecutorButton"
+ExecutorButton.Parent = Menu
+ExecutorButton.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ExecutorButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ExecutorButton.BorderSizePixel = 2
+ExecutorButton.Position = UDim2.new(0.0149253728, 0, 0.213043466, 0)
+ExecutorButton.Size = UDim2.new(0, 129, 0, 28)
+ExecutorButton.Font = Enum.Font.Michroma
+ExecutorButton.Text = "Executor"
+ExecutorButton.TextColor3 = Color3.fromRGB(158, 50, 50)
+ExecutorButton.TextSize = 14.000
+ExecutorButton.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+ExecutorButton.TextStrokeTransparency = 0.900
+
+Executor.Name = "Executor"
+Executor.Parent = Menu
+Executor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Executor.BackgroundTransparency = 1.000
+Executor.Position = UDim2.new(0.272388071, 0, 0.0608695634, 0)
+Executor.Size = UDim2.new(0, 367, 0, 202)
+
+Input.Name = "Input"
+Input.Parent = Executor
+Input.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+Input.BorderColor3 = Color3.fromRGB(59, 59, 59)
+Input.BorderSizePixel = 2
+Input.Size = UDim2.new(0, 372, 0, 197)
+Input.ClearTextOnFocus = false
+Input.Font = Enum.Font.Unknown
+Input.MultiLine = true
+Input.PlaceholderColor3 = Color3.fromRGB(34, 135, 0)
+Input.PlaceholderText = "--Insert Code"
+Input.Text = ""
+Input.TextColor3 = Color3.fromRGB(0, 255, 0)
+Input.TextSize = 12.000
+Input.TextStrokeTransparency = 0.700
+Input.TextXAlignment = Enum.TextXAlignment.Left
+Input.TextYAlignment = Enum.TextYAlignment.Top
+
+Execute.Name = "Execute"
+Execute.Parent = Executor
+Execute.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+Execute.BorderColor3 = Color3.fromRGB(120, 8, 0)
+Execute.BorderSizePixel = 2
+Execute.Position = UDim2.new(-0.356948227, 0, 0.782178223, 0)
+Execute.Size = UDim2.new(0, 122, 0, 39)
+Execute.Font = Enum.Font.RobotoMono
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(124, 0, 0)
+Execute.TextSize = 14.000
+Execute.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+Execute.TextStrokeTransparency = 0.850
+
+-- Scripts:
+
+local function POGN_fake_script() -- Login.Load & Login 
+	local script = Instance.new('LocalScript', Login)
+
+	local Login = script.Parent
+	local LoginButton = script.Parent.Login
+	Login.Position = UDim2.new(0,0,0,0)
+	Login:TweenSizeAndPosition(
+		UDim2.new(0,175,0,292),
+		UDim2.new(0.44, 0,0.213, 0),
+		Enum.EasingDirection.In,
+		Enum.EasingStyle.Quint,
+		1,
+		false
+	)
+	
+	local User = script.Parent.User
+	local Password = script.Parent.Password
+	
+	LoginButton.MouseButton1Down:Connect(function()
+		if User.Text ~= "Zeku" then return end
+		if Password.Text ~= "Zeku" then return end
+		Login:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quint,2,true)
+		wait(2)
+		Login.Visible = false
+		script.Parent.Parent.Menu.Visible = true
+	end)
+end
+coroutine.wrap(POGN_fake_script)()
+local function VOYZN_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
+
+	local Text = [[--------------------[Updates]---------------------
+	               -Added Login System
+	               -Added Executor Tab [BETA] 
+	--------------------[SNEAK-PEAKS]---------------------
+	               -Scripthub soon!
+	               ]]
+	
+	script.Parent.TextLabel.Text = Text
+end
+coroutine.wrap(VOYZN_fake_script)()
+local function ILBA_fake_script() -- MainButton.LocalScript 
+	local script = Instance.new('LocalScript', MainButton)
+
+	script.Parent.MouseButton1Up:Connect(function()
+		script.Parent.Parent.Executor.Visible = false
+		script.Parent.Parent.Main.Visible = true
+	end)
+end
+coroutine.wrap(ILBA_fake_script)()
+local function DLFV_fake_script() -- ExecutorButton.LocalScript 
+	local script = Instance.new('LocalScript', ExecutorButton)
+
+	script.Parent.MouseButton1Up:Connect(function()
+		script.Parent.Parent.Executor.Visible = true
+		script.Parent.Parent.Main.Visible = false
+	end)
+end
+coroutine.wrap(DLFV_fake_script)()
+local function AZJCIIK_fake_script() -- Execute.Execute 
+	local script = Instance.new('LocalScript', Execute)
+
+	script.Parent.MouseButton1Down:Connect(function()
+		loadstring(script.Parent.Parent.Input.Text)()
+	end)
+end
+coroutine.wrap(AZJCIIK_fake_script)()
