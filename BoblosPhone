@@ -1,0 +1,205 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local BoblosPhone = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Screen = Instance.new("Frame")
+local Buttons = Instance.new("Folder")
+local Off = Instance.new("TextButton")
+local Up = Instance.new("TextButton")
+local Down = Instance.new("TextButton")
+local Apps = Instance.new("Folder")
+local MusicPlayer = Instance.new("ImageButton")
+local Audio = Instance.new("Folder")
+local MusicApp = Instance.new("Frame")
+local MusicPlayer_2 = Instance.new("ImageButton")
+local Sad = Instance.new("Sound",MusicPlayer)
+local Pirate = Instance.new("Sound",MusicPlayer)
+local Player = Instance.new("TextBox")
+local Play = Instance.new("TextButton")
+local Stop = Instance.new("TextButton")
+local Exit = Instance.new("TextButton")
+
+--Properties:
+
+BoblosPhone.Name = "BoblosPhone"
+BoblosPhone.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = BoblosPhone
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main.Position = UDim2.new(0.426092535, 0, 0.0568047352, 0)
+Main.Size = UDim2.new(0, 258, 0, 450)
+Main.Active = true
+Main.Draggable = true
+
+Screen.Name = "Screen"
+Screen.Parent = Main
+Screen.Active = true
+Screen.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+Screen.BorderSizePixel = 0
+Screen.Position = UDim2.new(0.0539995544, 0, 0.0301380754, 0)
+Screen.Size = UDim2.new(0, 231, 0, 422)
+
+Buttons.Name = "Buttons"
+Buttons.Parent = Main
+
+Off.Name = "Off"
+Off.Parent = Buttons
+Off.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Off.BorderSizePixel = 0
+Off.Position = UDim2.new(0.94934839, 0, 0.111111112, 0)
+Off.Size = UDim2.new(0, 13, 0, 50)
+Off.Font = Enum.Font.SourceSans
+Off.Text = ""
+Off.TextColor3 = Color3.fromRGB(0, 0, 0)
+Off.TextSize = 14.000
+
+Up.Name = "Up"
+Up.Parent = Buttons
+Up.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
+Up.BorderSizePixel = 0
+Up.Position = UDim2.new(0.94934839, 0, 0.25555557, 0)
+Up.Size = UDim2.new(0, 13, 0, 35)
+Up.Font = Enum.Font.SourceSans
+Up.Text = ""
+Up.TextColor3 = Color3.fromRGB(0, 0, 0)
+Up.TextSize = 14.000
+
+Down.Name = "Down"
+Down.Parent = Buttons
+Down.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
+Down.BorderSizePixel = 0
+Down.Position = UDim2.new(0.94934839, 0, 0.362222254, 0)
+Down.Size = UDim2.new(0, 13, 0, 35)
+Down.Font = Enum.Font.SourceSans
+Down.Text = ""
+Down.TextColor3 = Color3.fromRGB(0, 0, 0)
+Down.TextSize = 14.000
+
+Apps.Name = "Apps"
+Apps.Parent = Main
+
+MusicPlayer.Name = "Music Player"
+MusicPlayer.Parent = Apps
+MusicPlayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MusicPlayer.Position = UDim2.new(0.11240311, 0, 0.186666667, 0)
+MusicPlayer.Size = UDim2.new(0, 48, 0, 43)
+MusicPlayer.Image = "rbxassetid://7268050789"
+
+Audio.Name = "Audio"
+Audio.Parent = Main
+
+MusicApp.Name = "MusicApp"
+MusicApp.Parent = Audio
+MusicApp.Active = true
+MusicApp.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+MusicApp.BorderSizePixel = 0
+MusicApp.Position = UDim2.new(0.0539995544, 0, 0.0301380754, 0)
+MusicApp.Size = UDim2.new(0, 231, 0, 422)
+MusicApp.Visible = false
+
+MusicPlayer_2.Name = "Music Player"
+MusicPlayer_2.Parent = MusicApp
+MusicPlayer_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MusicPlayer_2.Position = UDim2.new(0.233615234, 0, 0.300410748, 0)
+MusicPlayer_2.Size = UDim2.new(0, 123, 0, 105)
+MusicPlayer_2.Image = "rbxassetid://7268050789"
+
+Player.Name = "Player"
+Player.Parent = MusicPlayer_2
+Player.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Player.Position = UDim2.new(-0.317073166, 0, 1.3238095, 0)
+Player.Size = UDim2.new(0, 200, 0, 50)
+Player.Font = Enum.Font.SourceSans
+Player.Text = ""
+Player.TextColor3 = Color3.fromRGB(0, 0, 0)
+Player.TextSize = 14.000
+
+Play.Name = "Play"
+Play.Parent = MusicPlayer_2
+Play.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Play.Position = UDim2.new(-0.317073166, 0, 2.00952387, 0)
+Play.Size = UDim2.new(0, 82, 0, 50)
+Play.Style = Enum.ButtonStyle.RobloxButton
+Play.Font = Enum.Font.Fondamento
+Play.Text = "PLAY"
+Play.TextColor3 = Color3.fromRGB(104, 83, 40)
+Play.TextScaled = true
+Play.TextSize = 14.000
+Play.TextWrapped = true
+
+Stop.Name = "Stop"
+Stop.Parent = MusicPlayer_2
+Stop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Stop.Position = UDim2.new(0.642276406, 0, 2.00952387, 0)
+Stop.Size = UDim2.new(0, 82, 0, 50)
+Stop.Style = Enum.ButtonStyle.RobloxButton
+Stop.Font = Enum.Font.Fondamento
+Stop.Text = "STOP"
+Stop.TextColor3 = Color3.fromRGB(104, 83, 40)
+Stop.TextScaled = true
+Stop.TextSize = 14.000
+Stop.TextWrapped = true
+
+Exit.Name = "Exit"
+Exit.Parent = MusicPlayer_2
+Exit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Exit.Position = UDim2.new(-0.471544743, 0, -1.20952368, 0)
+Exit.Size = UDim2.new(0, 58, 0, 34)
+Exit.Style = Enum.ButtonStyle.RobloxButton
+Exit.Font = Enum.Font.Fondamento
+Exit.Text = "Exit"
+Exit.TextColor3 = Color3.fromRGB(104, 83, 40)
+Exit.TextScaled = true
+Exit.TextSize = 14.000
+Exit.TextWrapped = true
+
+Sad.SoundId = "rbxassetid://1838260553"
+Pirate.SoundId = "rbxassetid://1845164089"
+Sad.Name = "Sad"
+Pirate.Name = "Pirate"
+
+Up.MouseButton1Click:Connect(function()
+	Sad.Volume = Sad.Volume + 1
+	Pirate.Volume = Pirate.Volume + 1
+end)
+
+Down.MouseButton1Click:Connect(function()
+	Sad.Volume = Sad.Volume - 1
+	Pirate.Volume = Pirate.Volume - 1
+end)
+
+Off.MouseButton1Click:Connect(function()
+BoblosPhone:Destroy()
+end)
+
+Exit.MouseButton1Click:Connect(function()
+	MusicApp.Visible = false
+	Screen.Visible = true
+end)
+
+Play.MouseButton1Up:Connect(function()
+	if Player.Text == "Sad" then
+		Sad:Play()
+	elseif Player.Text == "Pirate" then
+		Pirate:Play()
+		else return
+	end
+end)
+
+Stop.MouseButton1Up:Connect(function()
+	if Player.Text == "Sad" then
+		Sad:Stop()
+	elseif Player.Text == "Pirate" then
+		Pirate:Stop()
+	else return
+	end
+end)
+
+MusicPlayer.MouseButton1Up:Connect(function()
+	MusicApp.Visible = true
+	Screen.Visible = false
+end)
