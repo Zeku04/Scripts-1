@@ -1,0 +1,193 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+local Synapse = Instance.new("ScreenGui")
+local Executor = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local Scroll = Instance.new("ScrollingFrame")
+local Input = Instance.new("TextBox")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
+local Execute = Instance.new("TextButton")
+local Clear = Instance.new("TextButton")
+local Options = Instance.new("TextButton")
+local Inject = Instance.new("TextButton")
+local Exit = Instance.new("TextButton")
+
+--Properties:
+Synapse.Name = "Synapse"
+Synapse.Parent = game.CoreGui
+
+Executor.Name = "Executor"
+Executor.Parent = Synapse
+Executor.Active = true
+Executor.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Executor.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Executor.Position = UDim2.new(0.115706094, 0, 0.104970686, 0)
+Executor.Size = UDim2.new(0, 754, 0, 346)
+Executor.Draggable = true
+Executor.Active = true
+
+TextLabel.Parent = Executor
+TextLabel.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Size = UDim2.new(0, 754, 0, 42)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Synapse X - v0.0.0"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 17.000
+
+TextLabel_2.Parent = Executor
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+TextLabel_2.BorderColor3 = Color3.fromRGB(80, 80, 80)
+TextLabel_2.Position = UDim2.new(0.828749657, 0, 0.138728321, 0)
+TextLabel_2.Size = UDim2.new(0, 123, 0, 249)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = ""
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 14.000
+
+TextLabel_3.Parent = Executor
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+TextLabel_3.BorderColor3 = Color3.fromRGB(122, 122, 122)
+TextLabel_3.Position = UDim2.new(0.0119760484, 0, 0.138728321, 0)
+TextLabel_3.Size = UDim2.new(0, 82, 0, 20)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "Script 1"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 17.000
+
+Scroll.Name = "Scroll"
+Scroll.Parent = Executor
+Scroll.Active = true
+Scroll.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+Scroll.BorderColor3 = Color3.fromRGB(79, 79, 79)
+Scroll.Position = UDim2.new(0.0119760446, 0, 0.196531788, 0)
+Scroll.Size = UDim2.new(0, 608, 0, 229)
+Scroll.ScrollBarThickness = 8
+
+Input.Name = "Input"
+Input.Parent = Scroll
+Input.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Input.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Input.Size = UDim2.new(0, 598, 0, 696)
+Input.ClearTextOnFocus = false
+Input.Font = Enum.Font.Jura
+Input.MultiLine = true
+Input.PlaceholderColor3 = Color3.fromRGB(47, 255, 0)
+Input.PlaceholderText = "--Put Code Here"
+Input.Text = ""
+Input.TextColor3 = Color3.fromRGB(255, 85, 85)
+Input.TextSize = 17.000
+Input.TextXAlignment = Enum.TextXAlignment.Left
+Input.TextYAlignment = Enum.TextYAlignment.Top
+
+ImageLabel.Parent = Executor
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Size = UDim2.new(0, 37, 0, 37)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=2530517466"
+
+TextLabel_4.Parent = Executor
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+TextLabel_4.BorderColor3 = Color3.fromRGB(71, 71, 71)
+TextLabel_4.Position = UDim2.new(0, 0, 0.121387281, 0)
+TextLabel_4.Size = UDim2.new(0, 754, 0, 0)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = ""
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextSize = 17.000
+
+TextLabel_5.Parent = Executor
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.Position = UDim2.new(0, 0, 0.121387281, 0)
+TextLabel_5.Size = UDim2.new(0, 0, 0, 18)
+TextLabel_5.Font = Enum.Font.SourceSans
+TextLabel_5.Text = ""
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextSize = 17.000
+
+TextLabel_6.Parent = Executor
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_6.Position = UDim2.new(1, 0, 0.121387281, 0)
+TextLabel_6.Size = UDim2.new(0, 0, 0, 18)
+TextLabel_6.Font = Enum.Font.SourceSans
+TextLabel_6.Text = ""
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.TextSize = 17.000
+
+Execute.Name = "Execute"
+Execute.Parent = Executor
+Execute.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
+Execute.BorderColor3 = Color3.fromRGB(62, 62, 62)
+Execute.Position = UDim2.new(0.0119760484, 0, 0.875722528, 0)
+Execute.Size = UDim2.new(0, 74, 0, 36)
+Execute.Font = Enum.Font.SourceSans
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+Execute.TextSize = 21.000
+Execute.TextWrapped = true
+
+Clear.Name = "Clear"
+Clear.Parent = Executor
+Clear.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
+Clear.BorderColor3 = Color3.fromRGB(62, 62, 62)
+Clear.Position = UDim2.new(0.132105812, 0, 0.875722528, 0)
+Clear.Size = UDim2.new(0, 78, 0, 36)
+Clear.Font = Enum.Font.SourceSans
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
+Clear.TextSize = 21.000
+Clear.TextWrapped = true
+
+Options.Name = "Options"
+Options.Parent = Executor
+Options.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
+Options.BorderColor3 = Color3.fromRGB(62, 62, 62)
+Options.Position = UDim2.new(0.78273958, 0, 0.875722528, 0)
+Options.Size = UDim2.new(0, 71, 0, 36)
+Options.Font = Enum.Font.SourceSans
+Options.Text = "Options"
+Options.TextColor3 = Color3.fromRGB(255, 255, 255)
+Options.TextSize = 21.000
+Options.TextWrapped = true
+
+Inject.Name = "Inject"
+Inject.Parent = Executor
+Inject.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
+Inject.BorderColor3 = Color3.fromRGB(62, 62, 62)
+Inject.Position = UDim2.new(0.89414537, 0, 0.875722528, 0)
+Inject.Size = UDim2.new(0, 61, 0, 36)
+Inject.Font = Enum.Font.SourceSans
+Inject.Text = "Attach"
+Inject.TextColor3 = Color3.fromRGB(255, 255, 255)
+Inject.TextSize = 21.000
+Inject.TextWrapped = true
+
+Exit.Name = "Exit"
+Exit.Parent = Executor
+Exit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Exit.BackgroundTransparency = 1.000
+Exit.Position = UDim2.new(0.949602127, 0, 0, 0)
+Exit.Size = UDim2.new(0, 38, 0, 42)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = "X"
+Exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Exit.TextScaled = true
+Exit.TextSize = 14.000
+Exit.TextWrapped = true
+
+Exit.MouseButton1Up:Connect(function()
+Synapse:Destroy()
+end)
+
+Execute.MouseButton1Up:Connect(function()
+loadstring(Input.Text)()
+end)
