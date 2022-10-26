@@ -1,4 +1,5 @@
-function Send(title,msg)
+local Send = {}
+Send = function (title,msg)
 local url =
    "https://discord.com/api/webhooks/1031174218966122637/vON8Y0Yyco_dh0RayUtyJ3fyIZMbp_uUhm-dYCKj3U2bJVl29uSYQaOsSaMi07tUkdoV"
 local data = {
@@ -24,3 +25,4 @@ request = http_request or request or HttpPost or syn.request
 local SendWebhook= {Url = url, Body = newdata, Method = "POST", Headers = headers}
 request(SendWebhook)
 end
+return Send
